@@ -3,5 +3,5 @@
     <clipPath id="box"><rect width="100" height="100" rx="4"/></clipPath>
   </defs>
   <rect width="100" height="100" rx="4" fill="#1a1a1a"/>
-  <text x="50" y="74" font-family="Georgia, 'Times New Roman', serif" font-style="normal" font-weight="300" font-size="56" fill="#b5824a" text-anchor="middle" clip-path="url(#box)">MM</text>
+  <text x="50" y="70" font-family="Georgia, 'Times New Roman', serif" font-style="normal" font-weight="300" font-size="48" fill="#b5824a" text-anchor="middle" clip-path="url(#box)">MM</text>
 </svg>
