@@ -1,11 +1,1096 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Michael W. Mizener</title>
-  </head>
-  <body>
-    <p>Michael W. Mizener</p>
-    <p>AI Product Leader</p>
-  </body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Michael W. Mizener — Product Leader</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+<style>
+  /* ── LIGHT MODE (default) ── */
+  :root {
+    --ink: #1a1a1a;
+    --paper: #f7f4ef;
+    --accent: #b5824a;
+    --rule: #d8d0c4;
+    --card-bg: #ffffff;
+    --body-text: #2e2a26;
+    --secondary-text: #5a534a;
+    --nav-bg: #1a1a1a;
+  }
+
+  /* ── DARK MODE (system preference) ── */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #f0ebe3;
+      --paper: #1c1a17;
+      --accent: #c9954f;
+      --rule: #332f28;
+      --card-bg: #252219;
+      --body-text: #cdc6bc;
+      --secondary-text: #a89e90;
+      --nav-bg: #111009;
+    }
+  }
+  /* ── DARK MODE (manual override) ── */
+  :root[data-theme="dark"],
+  body[data-theme="dark"] {
+    --ink: #f0ebe3;
+    --paper: #1c1a17;
+    --accent: #c9954f;
+    --rule: #332f28;
+    --card-bg: #252219;
+    --body-text: #cdc6bc;
+    --secondary-text: #a89e90;
+    --nav-bg: #111009;
+  }
+  /* iOS WebKit: apply background and color directly to body */
+  body[data-theme="dark"] {
+    background-color: #1c1a17 !important;
+    color: #f0ebe3 !important;
+  }
+  body[data-theme="light"] {
+    background-color: #f7f4ef !important;
+    color: #1a1a1a !important;
+  }
+
+  /* ── DARK MODE CARD HOVER GLOW ── */
+  :root[data-theme="dark"] .exp-card:hover,
+  :root[data-theme="dark"] .skill-group:hover,
+  :root[data-theme="dark"] .edu-card:hover,
+  :root[data-theme="dark"] .about-card:hover,
+  :root[data-theme="dark"] .about-mini-card:hover,
+  :root[data-theme="dark"] .values-card:hover,
+  :root[data-theme="dark"] .contact-form-card:hover,
+  body[data-theme="dark"] .exp-card:hover,
+  body[data-theme="dark"] .skill-group:hover,
+  body[data-theme="dark"] .edu-card:hover,
+  body[data-theme="dark"] .about-card:hover,
+  body[data-theme="dark"] .about-mini-card:hover,
+  body[data-theme="dark"] .values-card:hover,
+  body[data-theme="dark"] .contact-form-card:hover {
+    box-shadow: 0 8px 32px rgba(201,149,79,0.28), 0 2px 8px rgba(201,149,79,0.15) !important;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .exp-card:hover,
+    :root:not([data-theme="light"]) .skill-group:hover,
+    :root:not([data-theme="light"]) .edu-card:hover,
+    :root:not([data-theme="light"]) .about-card:hover,
+    :root:not([data-theme="light"]) .about-mini-card:hover,
+    :root:not([data-theme="light"]) .values-card:hover,
+    :root:not([data-theme="light"]) .contact-form-card:hover {
+      box-shadow: 0 8px 32px rgba(201,149,79,0.28), 0 2px 8px rgba(201,149,79,0.15) !important;
+    }
+  }
+
+  /* ── MOBILE THEME TOGGLE ── */
+  .mobile-theme-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.08);
+    cursor: pointer;
+    margin-top: 1.5rem;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .mobile-theme-btn:hover { background: rgba(255,255,255,0.18); border-color: var(--accent); }
+  .mobile-theme-btn .material-symbols-rounded {
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.85);
+    transition: color 0.2s;
+    user-select: none;
+  }
+  .mobile-theme-btn:hover .material-symbols-rounded { color: var(--accent); }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  ::selection { background: rgba(181, 130, 74, 0.35); color: var(--ink); }
+  ::-moz-selection { background: rgba(181, 130, 74, 0.35); color: var(--ink); }
+  input::selection,
+  textarea::selection { background: rgba(181, 130, 74, 0.5); color: var(--ink); }
+  input::-moz-selection,
+  textarea::-moz-selection { background: rgba(181, 130, 74, 0.5); color: var(--ink); }
+  input, textarea {
+    accent-color: var(--accent);
+    caret-color: var(--accent);
+  }
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    scroll-padding-top: 70px;
+    height: 100%;
+  }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    overflow-x: hidden;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* ── DESKTOP TOP NAVBAR ── */
+  .desktop-nav {
+    display: none;
+  }
+  @media (min-width: 769px) {
+    .desktop-nav {
+      display: flex;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: var(--nav-bg);
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 3rem;
+      height: 58px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+    }
+    .desktop-nav .nav-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      color: var(--accent);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 300;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .desktop-nav .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      align-items: center;
+    }
+    .desktop-nav .nav-links a {
+      font-size: 0.74rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+    .desktop-nav .nav-links a:hover { color: var(--accent); }
+    .desktop-nav .nav-theme-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.08);
+      cursor: pointer;
+      margin-left: 1.2rem;
+      transition: background 0.2s, border-color 0.2s;
+      flex-shrink: 0;
+    }
+    .desktop-nav .nav-theme-btn:hover {
+      background: rgba(255,255,255,0.18);
+      border-color: var(--accent);
+    }
+    .desktop-nav .nav-theme-btn .material-symbols-rounded {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.85);
+      transition: color 0.2s;
+      user-select: none;
+    }
+    .desktop-nav .nav-theme-btn:hover .material-symbols-rounded {
+      color: var(--accent);
+    }
+    /* Push main content below fixed navbar */
+    main { padding-top: 58px; }
+    #home { padding-top: 4rem; }
+  }
+
+  /* ── HAMBURGER NAV ── */
+  .nav-toggle {
+    position: fixed;
+    left: 1.5rem;
+    top: 1.5rem;
+    z-index: 9999;
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: var(--nav-bg);
+    padding: 14px 12px;
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    transition: background 0.2s;
+    border: none;
+  }
+  @media (max-width: 768px) {
+    .nav-toggle { display: flex; }
+  }
+  .nav-toggle:hover { background: var(--accent); }
+  .nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #ffffff;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .nav-drawer {
+    position: fixed;
+    left: 0; top: 0;
+    width: 260px; height: 100vh;
+    background: var(--nav-bg);
+    z-index: 999;
+    transform: translateX(-100%);
+    transition: transform 0.35s cubic-bezier(0.77,0,0.18,1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 5rem 2.5rem 3rem;
+  }
+  .nav-drawer.open { transform: translateX(0); }
+  .nav-drawer .nav-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+  }
+  .nav-drawer a {
+    display: block;
+    font-weight: 300;
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: color 0.2s, padding-left 0.2s;
+    cursor: pointer;
+  }
+  .nav-drawer a:hover { color: var(--accent); padding-left: 0.5rem; }
+  .nav-overlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 998;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  .nav-overlay.open { opacity: 1; pointer-events: all; }
+
+  /* ── MAIN LAYOUT ── */
+  main { max-width: 860px; margin: 0 auto; padding: 0 2rem 6rem; }
+
+  /* ── HERO ── */
+  #home {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 5rem 0 4.5rem;
+  }
+  .hero-eyebrow {
+    font-size: 0.78rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    margin-top: 3rem;
+  }
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(3.2rem, 8vw, 5.5rem);
+    line-height: 1.0;
+    color: var(--accent);
+    letter-spacing: -0.01em;
+  }
+  .hero-name em { font-style: italic; color: var(--accent); }
+  .hero-divider {
+    width: 60px; height: 2px;
+    background: var(--accent);
+    margin: 1.8rem 0;
+  }
+  .hero-summary {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--body-text);
+    max-width: 600px;
+    line-height: 1.8;
+  }
+
+  /* ── SECTION HEADERS ── */
+  .section-header {
+    padding: 2rem 0 2.5rem;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 3rem;
+  }
+  .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 0.6rem;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 2.6rem;
+    color: var(--ink);
+    line-height: 1.15;
+  }
+
+  /* ── EXPERIENCE CARDS ── */
+  .experience-list { display: flex; flex-direction: column; gap: 2.5rem; }
+  .exp-card {
+    background: var(--card-bg);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+    padding: 2rem 2.5rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    transition: box-shadow 0.25s;
+  }
+  .exp-card:hover {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.14);
+  }
+  .exp-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.2rem;
+  }
+  .exp-company {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: 0.01em;
+    margin-bottom: 0.2rem;
+  }
+  .exp-dates {
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    padding-top: 0.3rem;
+  }
+  .exp-title {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--secondary-text);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 0.2rem;
+  }
+  .exp-location {
+    font-size: 0.8rem;
+    color: var(--secondary-text);
+    margin-bottom: 1.1rem;
+  }
+  .exp-accomplishments { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+  .exp-accomplishments li {
+    font-size: 0.93rem;
+    font-weight: 300;
+    line-height: 1.7;
+    padding-left: 1.4rem;
+    position: relative;
+    color: var(--body-text);
+  }
+  .exp-accomplishments li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0.62em;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .exp-accomplishments li strong { color: var(--ink); font-weight: 500; }
+
+  @media (max-width: 768px) {
+    .exp-meta {
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 1.1rem;
+    }
+    .exp-location { margin-bottom: 0; }
+    .exp-dates { padding-top: 0.2rem; }
+  }
+
+  /* ── SKILLS ── */
+  #skills { padding-bottom: 5rem; }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+    align-items: stretch;
+  }
+  @media (max-width: 768px) {
+    .skills-grid { grid-template-columns: 1fr; }
+  }
+  .skill-group { background: var(--card-bg); border: 1px solid var(--rule); border-left: 3px solid var(--accent); padding: 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.07); transition: box-shadow 0.25s; }
+  .skill-group:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.14); }
+  .skill-group-title {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+  }
+  .skill-group ul { list-style: none; }
+  .skill-group ul li {
+    font-size: 0.88rem;
+    font-weight: 300;
+    color: var(--body-text);
+    padding: 0.3rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .skill-group ul li:last-child { border-bottom: none; }
+
+  /* ── EDUCATION ── */
+  #education { padding-bottom: 5rem; }
+  .edu-list { display: flex; flex-direction: column; gap: 1.5rem; }
+  .edu-card {
+    background: var(--card-bg);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+    padding: 1.6rem 2rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    transition: box-shadow 0.25s;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .edu-school {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+  }
+  .edu-degree { font-size: 0.88rem; font-weight: 300; color: var(--body-text); line-height: 1.5; }
+  .edu-degree + .edu-degree { margin-top: 0.25rem; }
+  .edu-location { font-size: 0.78rem; color: var(--secondary-text); letter-spacing: 0.08em; text-align: right; }
+  @media (max-width: 768px) {
+    .edu-card { flex-direction: column; }
+    .edu-location { text-align: left; }
+  }
+  .edu-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.14); }
+
+  /* ── ABOUT / CONTACT ── */
+  #about { padding-bottom: 5rem; }
+  .about-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start; }
+  @media (max-width: 600px) { .about-layout { grid-template-columns: 1fr; } }
+  .about-sidebar { display: flex; flex-direction: column; gap: 1rem; }
+  .about-card { background: var(--card-bg); border: 1px solid var(--rule); border-left: 3px solid var(--accent); padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.07); transition: box-shadow 0.25s; }
+  .about-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.14); }
+  .about-mini-card { background: var(--card-bg); border: 1px solid var(--rule); border-left: 3px solid var(--accent); padding: 1.25rem 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.07); transition: box-shadow 0.25s; }
+  .about-mini-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.14); }
+  .about-mini-label { font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 0.4rem; }
+  .about-mini-value { font-size: 0.9rem; font-weight: 300; color: var(--body-text); line-height: 1.6; }
+  .about-mini-value a { color: var(--body-text); text-decoration: none; transition: color 0.2s; }
+  .about-mini-value a:hover { color: var(--accent); }
+  .about-mini-value .about-mini-big { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 300; color: var(--ink); line-height: 1; margin-bottom: 0.2rem; display: block; }
+  .about-card h3,
+  .contact-form-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 1rem;
+  }
+  .about-card p { font-size: 0.9rem; font-weight: 300; line-height: 1.8; color: var(--body-text); }
+
+
+  /* ── VALUES ── */
+  #values { padding-bottom: 5rem; }
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    align-items: stretch;
+  }
+  @media (max-width: 768px) {
+    .values-grid { grid-template-columns: 1fr; }
+  }
+  .values-card {
+    background: var(--card-bg);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+    padding: 2rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    transition: box-shadow 0.25s;
+  }
+  .values-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.14); }
+  .values-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 1rem;
+  }
+  .values-card-body {
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--body-text);
+  }
+
+  /* ── CONTACT FORM ── */
+  #contact { padding-bottom: 5rem; }
+  .contact-form-card {
+    background: var(--card-bg);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+    padding: 2.5rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    transition: box-shadow 0.25s;
+  }
+  .contact-form-card:hover {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.14);
+  }
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+  @media (max-width: 600px) { .form-grid { grid-template-columns: 1fr; } }
+  .form-field { display: flex; flex-direction: column; gap: 0.4rem; }
+  .form-field.full { grid-column: 1 / -1; }
+  .form-field label {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .form-field input,
+  .form-field textarea {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 300;
+    color: var(--ink);
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    padding: 0.75rem 1rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    width: 100%;
+    border-radius: 0;
+    -webkit-appearance: none;
+  }
+  .form-field input:focus,
+  .form-field textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(181,130,74,0.12);
+  }
+  .form-field textarea { resize: vertical; min-height: 130px; }
+  .form-submit {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.85rem 2.5rem;
+    background: var(--accent);
+    color: #ffffff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .form-submit:hover { background: var(--ink); transform: translateY(-1px); }
+  .form-success {
+    display: none;
+    margin-top: 1.2rem;
+    padding: 1rem 1.2rem;
+    background: rgba(34,139,80,0.08);
+    border: 1px solid #228b50;
+    font-size: 0.88rem;
+    color: #228b50;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+  }
+
+
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.78rem;
+    color: var(--secondary-text);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-top: 1px solid var(--rule);
+    line-height: 1.9;
+  }
+  .footer-mobile { display: none; }
+  .footer-desktop { display: inline; }
+  @media (max-width: 768px) {
+    .footer-mobile { display: inline; }
+    .footer-desktop { display: none; }
+  }
+
+  /* ── RESUME DOWNLOAD MOBILE ── */
+  @media (max-width: 768px) {
+    .resume-dl-desktop { display: none !important; }
+    .resume-dl-mobile { display: block !important; }
+  }
+
+  /* ── FADE-IN ── */
+  .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<nav class="desktop-nav" aria-label="Primary navigation">
+  <a href="#home" class="nav-brand">Michael W. Mizener</a>
+  <ul class="nav-links">
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#values">Values</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li>
+      <button class="nav-theme-btn" id="desktopThemeToggle" aria-label="Toggle dark mode">
+        <span class="material-symbols-rounded" id="desktopThemeIcon">dark_mode</span>
+      </button>
+    </li>
+  </ul>
+</nav>
+
+<button class="nav-toggle" id="navToggle" aria-label="Open navigation">
+  <span></span><span></span><span></span>
+</button>
+
+<nav class="nav-drawer" id="navDrawer">
+  <a class="nav-name" role="button" onclick="navTo(event,'home')" style="text-decoration:none;cursor:pointer;">Michael W. Mizener</a>
+  <a role="button" onclick="navTo(event,'experience')">Experience</a>
+  <a role="button" onclick="navTo(event,'skills')">Skills</a>
+  <a role="button" onclick="navTo(event,'education')">Education</a>
+  <a role="button" onclick="navTo(event,'about')">About</a>
+  <a role="button" onclick="navTo(event,'values')">Values</a>
+  <a role="button" onclick="navTo(event,'contact')">Contact</a>
+  <button class="mobile-theme-btn" id="themeToggle" aria-label="Toggle dark mode">
+    <span class="material-symbols-rounded" id="mobileThemeIcon">dark_mode</span>
+  </button>
+</nav>
+<div class="nav-overlay" id="navOverlay" onclick="closeNav()"></div>
+
+<main>
+
+  <section id="home">
+    <div class="hero-eyebrow">AI Product Leader</div>
+    <h1 class="hero-name">Michael W.<br><em>Mizener</em></h1>
+    <div class="hero-divider"></div>
+    <p class="hero-summary">Product leader with 10+ years building digital experiences for tens of millions of users. I lead global teams with genuine customer empathy, a data-driven mindset, and a hands-on approach to understanding what people actually need. I care about the details, deliver outcomes over output, and utilize AI tools daily - not as a novelty, but as a real part of how I discover, decide, and deliver.</p>
+
+  </section>
+
+  <section id="experience" style="padding-bottom: 5rem;">
+    <div class="section-header fade-in" style="display:flex; justify-content:space-between; align-items:flex-end;">
+      <div>
+        <div class="section-label">Career History</div>
+        <h2 class="section-title">Professional Experience</h2>
+      </div>
+      <a href="https://michaelmizener.com/Michael_Mizener_Resume.pdf" target="_blank" class="resume-dl-desktop" style="font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); text-decoration:none; font-weight:500; white-space:nowrap; padding-bottom:0.3rem; transition:color 0.2s;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--accent)'">↓ Download Resume</a>
+    </div>
+    <a href="https://michaelmizener.com/Michael_Mizener_Resume.pdf" target="_blank" class="resume-dl-mobile" style="display:none; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); text-decoration:none; font-weight:500; margin-bottom:1.5rem;">↓ Download Resume</a>
+    <div class="experience-list">
+
+      <div class="exp-card fade-in">
+        <div class="exp-meta">
+          <div class="exp-left">
+            <div class="exp-company">Planet Fitness</div>
+            <div class="exp-title">Product Manager, Digital</div>
+            <div class="exp-location">Hampton, NH</div>
+          </div>
+          <div class="exp-dates">2023 – 2025</div>
+        </div>
+        <ul class="exp-accomplishments">
+          <li>Led multiple cross-functional teams to deliver digital mobile app and web experiences to 21.5 million members across 7 countries, including a GDPR-compliant localized launch in Spain supporting EU expansion</li>
+          <li>Delivered a completely redesigned prospect website, leveraging A/B testing to validate design decisions on layout, styles, and CTAs, resulting in a 7% increase in conversions</li>
+          <li>Built a new membership rate tool for all 2,700+ clubs, enabling employees to use tablets instead of printouts to share membership offers, saving over $120,000 annually in printing costs</li>
+          <li>Reduced online membership cancellation rate by 5% by building new save tactics into a redesigned member portal</li>
+          <li>Selected and integrated a new global translation platform, reducing engineering localization costs by 75%</li>
+          <li>Evaluated, pilot-tested, and launched payment platforms across international markets, reducing franchisee transaction costs by 20% and improving checkout conversion for international members by 15%</li>
+          <li>Partnered with executives to define a firm-wide analytics and data strategy, translating business needs into technical roadmaps and identifying new growth opportunities</li>
+        </ul>
+      </div>
+
+      <div class="exp-card fade-in">
+        <div class="exp-meta">
+          <div class="exp-left">
+            <div class="exp-company">Workgrid Software</div>
+            <div class="exp-title">Product Manager</div>
+            <div class="exp-location">Dover, NH</div>
+          </div>
+          <div class="exp-dates">2019 – 2023</div>
+        </div>
+        <ul class="exp-accomplishments">
+          <li>Directed 20+ engineers globally across US, Europe, and Asia to deliver a cross-channel employee experience platform (web, mobile, desktop, Microsoft Teams, AI chatbot)</li>
+          <li>Enabled Workgrid’s expansion into enterprise markets by establishing the company’s first SOC 2 certification, Multi-Region Disaster Recovery procedures, and 99.9% uptime SLA, meeting the compliance, reliability, and availability standards required by Fortune 500 customers</li>
+          <li>Increased DAU by 200% and MAU by 150% year-over-year, exceeding KPIs</li>
+          <li>Reduced cloud infrastructure costs by $25,000 monthly by optimizing AWS Serverless architecture and negotiating vendor discounts with Amazon Cloud Computing Services partners</li>
+          <li>Unlocked new partner market revenue by leading a Headless architecture strategy, enabling product services to be embedded in any third-party user interface</li>
+        </ul>
+      </div>
+
+      <div class="exp-card fade-in">
+        <div class="exp-meta">
+          <div class="exp-left">
+            <div class="exp-company">Liberty Mutual Insurance</div>
+            <div class="exp-title">Product Owner, IT Service Management</div>
+            <div class="exp-location">Portsmouth, NH</div>
+          </div>
+          <div class="exp-dates">2016 – 2019</div>
+        </div>
+        <ul class="exp-accomplishments">
+          <li>Improved ITSM time-on-task efficiency by 45% by delivering new apps with enhanced user interfaces and search capabilities across incident, change, and problem management</li>
+          <li>Built and launched an employee incident ticket app enabling employees to create tickets in under 30 seconds, saving 20 minutes per issue, reducing Help Desk hold times by 35%, and saving the company $75 per incident ($500,000+ annually)</li>
+          <li>Created product content including release notes, tutorials, and demo videos to drive app adoption, achieving a 45% DAU/MAU stickiness ratio</li>
+          <li>Drove NPS from –40 to +80 by redesigning core ITSM products, recovering from multiple years of negative user sentiment</li>
+        </ul>
+      </div>
+
+      <div class="exp-card fade-in">
+        <div class="exp-meta">
+          <div class="exp-left">
+            <div class="exp-company">Liberty Mutual Insurance</div>
+            <div class="exp-title">Senior Business Systems Analyst, IT Services</div>
+            <div class="exp-location">Portsmouth, NH</div>
+          </div>
+          <div class="exp-dates">2012 – 2016</div>
+        </div>
+        <ul class="exp-accomplishments">
+          <li>Defined and led the product strategy for ITSM automation and orchestration, delivering a 40% reduction in IT costs</li>
+          <li>Pioneered the firm’s first Robotic Process Automation (RPA) initiative, defining the vision, building the team from the ground up, and delivering a 50% reduction in reporting cycle time</li>
+        </ul>
+      </div>
+
+
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="section-header fade-in">
+      <div class="section-label">Core Competencies</div>
+      <h2 class="section-title">Skills &amp; Expertise</h2>
+    </div>
+    <div class="skills-grid fade-in">
+      <div class="skill-group">
+        <div class="skill-group-title">Product Management</div>
+        <ul>
+          <li>Product Discovery</li>
+          <li>Market Research</li>
+          <li>User Research</li>
+          <li>Customer Segmentation</li>
+          <li>Product Design</li>
+          <li>Usability Testing</li>
+          <li>Backlog Prioritization</li>
+          <li>Stakeholder Alignment</li>
+          <li>Product Analytics</li>
+          <li>A/B Testing</li>
+          <li>Customer Retention</li>
+          <li>Agile (SAFe, Scrum, Kanban)</li>
+          <li>Data Privacy &amp; Ethics</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Product Leadership</div>
+        <ul>
+          <li>Product Strategy</li>
+          <li>Cross-Functional Team Leadership</li>
+          <li>System Architecture &amp; Design</li>
+          <li>Product Roadmap Ownership</li>
+          <li>OKR Definition &amp; Tracking</li>
+          <li>Go-to-Market Strategy</li>
+          <li>Product Growth</li>
+          <li>Mentorship</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Tools &amp; Software</div>
+        <ul>
+          <li>Claude Code</li>
+          <li>Gemini</li>
+          <li>GitHub</li>
+          <li>VSCode</li>
+          <li>Figma</li>
+          <li>Miro</li>
+          <li>Lucid</li>
+          <li>Lovable</li>
+          <li>Fullstory</li>
+          <li>Microsoft Teams</li>
+          <li>AWS</li>
+          <li>Google Cloud</li>
+          <li>Jira</li>
+          <li>SQL</li>
+          <li>Power BI</li>
+          <li>Tableau</li>
+          <li>Amazon QuickSight</li>
+          <li>Google Analytics 4</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="section-header fade-in">
+      <div class="section-label">Academic Background</div>
+      <h2 class="section-title">Education</h2>
+    </div>
+    <div class="edu-list fade-in">
+      <div class="edu-card">
+        <div>
+          <div class="edu-school">Southern New Hampshire University</div>
+          <div class="edu-degree">Master of Business Administration, Project Management</div>
+        </div>
+        <div class="edu-location">
+          <div style="color:var(--accent);font-size:0.82rem;letter-spacing:0.12em;font-weight:500;margin-bottom:0.25rem;">2012 – 2016</div>
+          <div>Manchester, NH</div>
+        </div>
+      </div>
+      <div class="edu-card">
+        <div>
+          <div class="edu-school">University of New Hampshire</div>
+          <div class="edu-degree">Bachelor of Arts, Political Science</div>
+          <div class="edu-degree">Minor, Business Administration</div>
+        </div>
+        <div class="edu-location">
+          <div style="color:var(--accent);font-size:0.82rem;letter-spacing:0.12em;font-weight:500;margin-bottom:0.25rem;">2002 – 2006</div>
+          <div>Durham, NH</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-header fade-in">
+      <div class="section-label">A Bit More</div>
+      <h2 class="section-title">About</h2>
+    </div>
+    <div class="about-layout fade-in">
+      <div class="about-card">
+        <p>Most recently as Product Manager at Planet Fitness, I led the product vision to expand digital services internationally, delivering experiences to over 21 million members across 7 countries. I have a proven track record of building new capabilities that drive sales, retention, and engagement, and I bring years of practice communicating complex product work through release notes, tutorial videos, and stakeholder presentations that actually land.</p>
+        <p style="margin-top:1.2rem;">I believe in using every tool available, including AI, to research deeper, prototype faster, and deliver better outcomes. I use AI daily to sharpen thinking, stress-test ideas, and move from concept to something tangible quickly. It's part of how I work, not a talking point.</p>
+        <p style="margin-top:1.2rem;">Outside the office, when I'm not with my family I'm usually learning a new skill or building something with my hands. Lately that's meant exploring homelabs and local AI, experimenting with 3D modeling and printing, and spending time woodworking and sewing. If there's a new problem, I'll find a way to solve it.</p>
+      </div>
+      <div class="about-sidebar">
+        <div class="about-mini-card">
+          <div class="about-mini-label">Location</div>
+          <div class="about-mini-value">Dover, NH &nbsp;·&nbsp; Greater Boston Area</div>
+        </div>
+        <div class="about-mini-card">
+          <div class="about-mini-label">Product Experience</div>
+          <div class="about-mini-value">10+ Years</div>
+        </div>
+        <div class="about-mini-card">
+          <div class="about-mini-label">Information Technology Experience</div>
+          <div class="about-mini-value">15+ Years</div>
+        </div>
+        <div class="about-mini-card">
+          <div class="about-mini-label">LinkedIn</div>
+          <div class="about-mini-value"><a href="https://www.linkedin.com/in/michaelwmizener" target="_blank">linkedin.com/in/michaelwmizener &#8599;</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="values" style="padding-bottom: 5rem;">
+    <div class="section-header fade-in">
+      <div class="section-label">Philosophy</div>
+      <h2 class="section-title">My Product Values</h2>
+    </div>
+    <div class="values-grid fade-in">
+      <div class="values-card">
+        <div class="values-card-title">Customers First</div>
+        <p class="values-card-body">I meet customers where they are, listening with empathy and starting with the &lsquo;why&rsquo; to understand the real problem. I champion the voice of the customer internally, keep them informed on the roadmap, and build relationships that evolve as their needs do.</p>
+      </div>
+      <div class="values-card">
+        <div class="values-card-title">Design, Build, Ship, Measure</div>
+        <p class="values-card-body">I believe in building lean and shipping with MVP in mind, then iterating based on real feedback. I close the loop post-launch, track the metrics that matter, and ruthlessly reprioritize to maximize impact on the things that actually move the needle.</p>
+      </div>
+      <div class="values-card">
+        <div class="values-card-title">How I Lead</div>
+        <p class="values-card-body">I lead with trust and deliver outcomes over output. I want the people I work with to do the best work of their careers, and I want the products we build together to be valuable, intuitive, and genuinely memorable to the people who use them.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-header fade-in">
+      <div class="section-label">Say Hello</div>
+      <h2 class="section-title">Contact</h2>
+    </div>
+    <div class="fade-in">
+      <div class="contact-form-card">
+        <h3>Send a Message</h3>
+        <form id="contactForm" action="https://formspree.io/f/xbdwzkly" method="POST">
+          <div class="form-grid">
+            <div class="form-field full">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required>
+            </div>
+            <div class="form-field full">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="Your email address" required>
+            </div>
+            <div class="form-field full">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Opportunity, collaboration, or just saying hi" required>
+            </div>
+            <div class="form-field full">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Your message here..." required></textarea>
+            </div>
+          </div>
+          <button type="submit" class="form-submit">Send Message</button>
+          <div class="form-success" id="formSuccess">
+            Thank you! Your message has been sent. I'll be in touch soon.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span class="footer-desktop">&copy; 2026 Michael W. Mizener &nbsp;·&nbsp; AI Product Leader &nbsp;·&nbsp; All rights reserved.</span>
+  <span class="footer-mobile">&copy; 2026 Michael W. Mizener<br>AI Product Leader<br>All rights reserved.</span>
+</footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const drawer = document.getElementById('navDrawer');
+  const overlay = document.getElementById('navOverlay');
+  const themeToggle = document.getElementById('themeToggle');
+  const desktopThemeToggle = document.getElementById('desktopThemeToggle');
+  const root = document.documentElement;
+  const systemDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+  // Nav
+  toggle.addEventListener('click', () => {
+    const open = drawer.classList.toggle('open');
+    overlay.classList.toggle('open', open);
+    toggle.classList.toggle('open', open);
+  });
+
+  function closeNav() {
+    drawer.classList.remove('open');
+    overlay.classList.remove('open');
+    toggle.classList.remove('open');
+  }
+
+  function navTo(e, id) {
+    e.preventDefault();
+    closeNav();
+    const target = document.getElementById(id);
+    if (target) {
+      setTimeout(() => {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 50);
+    }
+  }
+
+  // Theme
+  function isDark() {
+    const saved = localStorage.getItem('theme');
+    if (saved) return saved === 'dark';
+    return systemDark.matches;
+  }
+
+  function applyTheme(dark) {
+    root.setAttribute('data-theme', dark ? 'dark' : 'light');
+    document.body.setAttribute('data-theme', dark ? 'dark' : 'light');
+    const desktopIcon = document.getElementById('desktopThemeIcon');
+    if (desktopIcon) desktopIcon.textContent = dark ? 'light_mode' : 'dark_mode';
+    const mobileIcon = document.getElementById('mobileThemeIcon');
+    if (mobileIcon) mobileIcon.textContent = dark ? 'light_mode' : 'dark_mode';
+  }
+
+  applyTheme(isDark());
+
+  themeToggle.addEventListener('click', () => {
+    const nowDark = root.getAttribute('data-theme') === 'dark';
+    const next = !nowDark;
+    localStorage.setItem('theme', next ? 'dark' : 'light');
+    applyTheme(next);
+  });
+
+  if (desktopThemeToggle) {
+    desktopThemeToggle.addEventListener('click', () => {
+      const nowDark = root.getAttribute('data-theme') === 'dark';
+      const next = !nowDark;
+      localStorage.setItem('theme', next ? 'dark' : 'light');
+      applyTheme(next);
+    });
+  }
+
+  systemDark.addEventListener('change', (e) => {
+    if (!localStorage.getItem('theme')) applyTheme(e.matches);
+  });
+
+  // Scroll fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Contact form
+  const contactForm = document.getElementById('contactForm');
+  const formSuccess = document.getElementById('formSuccess');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = contactForm.querySelector('.form-submit');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      try {
+        const res = await fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          contactForm.reset();
+          formSuccess.style.display = 'block';
+          btn.textContent = 'Sent!';
+        } else {
+          btn.textContent = 'Error — try again';
+          btn.disabled = false;
+        }
+      } catch {
+        btn.textContent = 'Error — try again';
+        btn.disabled = false;
+      }
+    });
+  }
+
+</script>
+</body>
 </html>
