@@ -1,5 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <clipPath id="box"><rect width="100" height="100" rx="4"/></clipPath>
+  </defs>
   <rect width="100" height="100" rx="4" fill="#1a1a1a"/>
-  <clipPath id="box"><rect width="100" height="100" rx="4"/></clipPath>
-  <text x="50" y="72" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-weight="400" font-size="52" fill="#b5824a" text-anchor="middle" clip-path="url(#box)">MM</text>
+  <text x="50" y="74" font-family="Georgia, 'Times New Roman', serif" font-style="normal" font-weight="300" font-size="56" fill="#b5824a" text-anchor="middle" clip-path="url(#box)">MM</text>
 </svg>
