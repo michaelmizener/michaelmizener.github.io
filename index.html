@@ -262,8 +262,10 @@
     color: var(--accent);
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    margin-bottom: 2.5rem;
+    margin-bottom: 0;
     font-weight: 300;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
   }
   .nav-drawer a {
     display: block;
@@ -655,7 +657,6 @@
     .resume-dl-desktop { display: none !important; }
     .resume-dl-mobile { display: block !important; }
   }
-
   /* ── FADE-IN ── */
   .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
   .fade-in.visible { opacity: 1; transform: translateY(0); }
@@ -959,7 +960,7 @@
             </div>
             <div class="form-field full">
               <label for="subject">Subject</label>
-              <input type="text" id="subject" name="subject" placeholder="Opportunity, collaboration, or just saying hi" required>
+              <input type="text" id="subject" name="subject" placeholder="Opportunity, collaboration, or just saying hi" class="subject-input" required>
             </div>
             <div class="form-field full">
               <label for="message">Message</label>
@@ -1061,6 +1062,18 @@
   }, { threshold: 0.12 });
 
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Mobile subject placeholder
+  const subjectInput = document.querySelector('.subject-input');
+  if (subjectInput) {
+    const updatePlaceholder = () => {
+      subjectInput.placeholder = window.innerWidth <= 768
+        ? 'Hello'
+        : 'Opportunity, collaboration, or just saying hi';
+    };
+    updatePlaceholder();
+    window.addEventListener('resize', updatePlaceholder);
+  }
 
   // Contact form
   const contactForm = document.getElementById('contactForm');
